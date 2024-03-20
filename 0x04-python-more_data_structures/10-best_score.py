@@ -10,4 +10,5 @@ def best_score(a_dictionary):
         max = lst[-1]
         for kys, vals in a_dictionary.items():
             if vals == max:
+                print(kys)
                 return kys
