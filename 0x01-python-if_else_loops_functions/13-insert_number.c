@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
 * insert_node - Function to insert node into linked list
 *
@@ -25,14 +24,18 @@ for (ptr = *head; ptr->next != NULL; ptr = ptr->next)
 if (number < ptr->next->n)
 break;
 }
-
 new->n = number;
-new->next = ptr->next;
 
 if (ptr == *head)
+{
+new->next = ptr;
 *head = new;
+}
 else
+{
+new->next = ptr->next;
 ptr->next = new;
+}
 
 return (new);
 }
