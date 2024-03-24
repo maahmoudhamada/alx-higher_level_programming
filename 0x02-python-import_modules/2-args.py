@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 
 import sys
-argc = len(sys.argv)
 
-arg = "arguement" if argc - 1 == 1 else "arguments"
-arg += '.' if argc - 1 == 0 else ':'
-print("{:d} {}".format(argc - 1, arg))
-for x in range(1, argc):
-    print("{:d} {}".format(x, sys.argv[x]))
+if __name__ == '__main__':
+    argc = len(sys.argv) - 1
+    args = 'argument' if argc == 1 else 'arguments'
+    args += '.' if argc == 0 else ':'
+    print("{} {}".format(argc, args))
+    for x in range(1, len(sys.argv)):
+        print("{}: {}".format(x, sys.argv[x]))
