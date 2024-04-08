@@ -19,6 +19,8 @@ class Rectangle:
     def __str__(self):
         """__str__: Magic method"""
         ret = ''
+        if self.width == 0 or self.height == 0:
+            return ret
         for h in range(self.height):
             for w in range(self.width):
                 ret += '#'
