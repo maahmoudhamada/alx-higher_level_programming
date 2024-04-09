@@ -110,5 +110,6 @@ class Rectangle:
         Args:
             cls: Equivalent to self but for classmethod
             size: Size of Square (Size == width == height)
+        Return: Return new Rectangle class's instance
         """
-        return Rectangle(size, size)
+        return cls(size, size)
