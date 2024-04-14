@@ -14,7 +14,7 @@ listint_t *t, *h;
 
 t = list, h = list;
 
-while (h)
+while (h && t && h->next)
 {
 t = t->next;
 h = h->next->next;
