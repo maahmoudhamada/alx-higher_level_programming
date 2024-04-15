@@ -19,4 +19,5 @@ class Square(Rectangle):
         super().__init__(self.__size, self.__size)
 
     def __str__(self):
+        """Magic method to return string representation in unformal way"""
         return "[Square] {}/{}".format(self.__size, self.__size)
