@@ -2,6 +2,7 @@
 
 """The lookup module contain lookup function"""
 
+
 def lookup(obj):
     """Return available attributes and methods of an object
 
