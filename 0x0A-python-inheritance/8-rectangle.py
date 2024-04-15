@@ -20,3 +20,18 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         elif value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+
+
+class Rectangle(BaseGeometry):
+    """Subclass 'Rectangle' inherted from superClass BaseGeometry"""
+
+    def __init__(self, width, height):
+        """Constructor magic method
+        Args:
+            width: Width of rectangle
+            height: Height of rectangle
+        """
+        super().integer_validator('width', width)
+        super().integer_validator('height', height)
+        self.__width = width
+        self.__height = height
