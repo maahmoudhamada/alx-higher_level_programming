@@ -7,7 +7,7 @@ import json
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-
+argvList = []
 filename = 'add_item.json'
 argvList = [sys.argv[x] for x in range(1, len(sys.argv))]
 try:
@@ -15,5 +15,5 @@ try:
 except Exception:
     jsonString = []
 
-argvList += jsonString
-save_to_json_file(argvList, filename)
+jsonString += argvList
+save_to_json_file(jsonString, filename)
