@@ -8,6 +8,8 @@ def write_file(filename="", text=""):
     Args:
         filename: Name of file to open
         text: Content to be writtern into a file
+    Return:
+        Number of character written to the file
     """
     with open(filename, 'w', encoding="utf-8") as f:
         charNum = f.write(text)
