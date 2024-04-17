@@ -23,7 +23,7 @@ class Student:
         Return: Dictionary description
         """
         data = self.__dict__
-        if attrs:
+        if type(attrs) is list and all(type(x) is str for x in attrs):
             new = {x: z for x, z in data.items() for y in attrs if x == y}
             return new
         else:
