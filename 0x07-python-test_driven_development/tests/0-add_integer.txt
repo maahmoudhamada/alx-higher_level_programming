@@ -1,0 +1,105 @@
+The 0-add_integer test examples
+--------------------------------
+
+The `add_integer()` function take 2 parameters (a) and (b)
+and return the sum of both numbers if integer/float otherwise
+raising TypeError exception
+
+Importing 0-add_integer module into test file:
+----------------------------------------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Usage Examples:
+===============
+
+Positive number examples:
+-------------------------
+
+>>> add_integer(2, 2)
+4
+
+>>> add_integer(2)
+100
+
+>>> add_integer(2.3, 3)
+5
+
+>>> add_integer(2.6)
+100
+
+
+---
+
+Negative number examples:
+-------------------------
+
+>>> add_integer(-2, -2)
+-4
+
+>>> add_integer(-2)
+96
+
+>>> add_integer(-2.3, -3)
+-5
+
+>>> add_integer(-2.6)
+96
+
+
+---
+
+Non-int/float examples:
+-----------------------
+
+>>> add_integer('ALX', 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+>>> add_integer(2, 'ALX')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+---
+
+`inf` & `nan` examples:
+=======================
+
+`inf` examples:
+---------------
+
+>>> add_integer(float('inf'), 2)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+
+`nan` examples:
+---------------
+
+>>> add_integer(float('nan'), 2)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+
+>>> add_integer(2, float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
