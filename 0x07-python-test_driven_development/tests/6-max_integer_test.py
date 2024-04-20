@@ -23,6 +23,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_multiple_types(self):
         """Method to test different data types ex: dict, tuple"""
+        self.assertEqual(max_integer([10, 1, 2, 3, 4]), 10)
         self.assertEqual(max_integer([1, 2, 3, 4, 4.1]), 4.1)
         self.assertEqual(max_integer(['A', 'L', 'X']), 'X')
         self.assertEqual(max_integer((1, 5, 3, 4, 5)), 5)
