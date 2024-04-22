@@ -120,3 +120,15 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
+
+    # ========================  Update  ========================
+
+    def to_dictionary(self):
+        """Dictionary representation"""
+        dic = {}
+        dic.update({'id': self.id})
+        dic.update({'width': self.width})
+        dic.update({'height': self.height})
+        dic.update({'x': self.x})
+        dic.update({'y': self.y})
+        return dic
