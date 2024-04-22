@@ -121,7 +121,7 @@ class Rectangle(Base):
                 if hasattr(self, key):
                     setattr(self, key, value)
 
-    # ========================  Update  ========================
+    # ========================  to_dictionary  ========================
 
     def to_dictionary(self):
         """Dictionary representation"""
