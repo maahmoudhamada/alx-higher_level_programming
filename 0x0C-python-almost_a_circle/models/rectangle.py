@@ -106,3 +106,17 @@ class Rectangle(Base):
             shape += '\n'
         print(shape, end="")
         # return shape # for testing purpose
+
+    # ========================  Update  ========================
+
+    def update(self, *args, **kwargs):
+        """Update method"""
+        if args:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
