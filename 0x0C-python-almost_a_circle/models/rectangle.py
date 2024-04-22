@@ -26,6 +26,13 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    # ========================  Str  ========================
+
+    def __str__(self):
+        """String method to print attributes"""
+        return "[Rectangle] ({}) {}/{} - {}/{}" \
+            .format(self.id, self.x, self.y, self.width, self.height)
+
     # ========================  Width  ========================
 
     @property
