@@ -6,6 +6,16 @@ from models.base import Base
 class Rectangle(Base):
     """Rectangle Class"""
 
+    def validator(self, name, value):
+        """Validtor for entered values"""
+
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(name))
+        elif value <= 0 and (name == 'width' or name == 'height'):
+            raise ValueError("{} must be > 0".format(name))
+        elif value < 0 and (name == 'x' or name == 'y'):
+            raise ValueError("{} must be >= 0".format(name))
+
     # ========================  Init  ========================
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -26,6 +36,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Width setter"""
+        self.validator('width', value)
         self.__width = value
 
     # ========================  Height  ========================
@@ -38,6 +49,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """height setter"""
+        self.validator('height', value)
         self.__height = value
 
     # ========================  X  ========================
@@ -50,6 +62,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """x setter"""
+        self.validator('x', value)
         self.__x = value
 
     # ========================  Y  ========================
@@ -62,4 +75,5 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """y setter"""
+        self.validator('y', value)
         self.__y = value
