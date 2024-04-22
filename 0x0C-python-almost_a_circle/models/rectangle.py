@@ -83,3 +83,19 @@ class Rectangle(Base):
     def area(self):
         """area method"""
         return self.width * self.height
+
+    # =======================  Display  =======================
+
+    def display(self):
+        """Display method"""
+        shape = ""
+        for i in range(self.y):
+            shape += '\n'
+        for h in range(self.height):
+            for j in range(self.x):
+                shape += ' '
+            for w in range(self.width):
+                shape += '#'
+            shape += '\n'
+        print(shape, end="")
+        # return shape # for testing purpose
