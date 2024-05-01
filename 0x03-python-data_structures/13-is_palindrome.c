@@ -74,6 +74,7 @@ for (i = 0; i < len / 2; i++)
 {
 if (p1->n != p2->n)
 return (0);
+p1 = p1->next, p2 = p2->next;
 }
 return (1);
 }
