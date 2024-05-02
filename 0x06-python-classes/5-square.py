@@ -31,3 +31,13 @@ class Square:
     def area(self):
         '''Method to get are of a square'''
         return self.__size * self.__size
+
+    def my_print(self):
+        '''Method to print square using "#" char'''
+        if self.size == 0:
+            print()
+        else:
+            for x in range(self.size):
+                for y in range(self.size):
+                    print("#", end="")
+                print()
