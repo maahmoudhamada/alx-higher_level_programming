@@ -13,7 +13,7 @@ class Square:
 
     def pos_validator(self, value):
         '''Validator for position attribute'''
-        if not isinstance(value, tuple) and len(value) != 2:
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         if not all(isinstance(elem, int) and elem >= 0 for elem in value):
             raise TypeError("position must be a tuple of 2 positive integers")
