@@ -4,6 +4,12 @@
 
 class Square:
     '''The Square class'''
+    def validator(self, value):
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+
     def __init__(self, size=0):
         '''Constructor
         Args:
@@ -19,12 +25,8 @@ class Square:
     @size.setter
     def size(self, value):
         '''setter for size attribute'''
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+        self.validator(value)
+        self.__size = value
 
     def area(self):
         '''Method to get are of a square'''
