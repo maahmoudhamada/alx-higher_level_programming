@@ -14,9 +14,9 @@ class Square:
     def pos_validator(self, value):
         '''Validator for position attribute'''
         if not isinstance(value, tuple) and len(value) != 2:
-            raise TypeError("First if condition")
+            raise TypeError("position must be a tuple of 2 positive integers")
         if not all(isinstance(elem, int) and elem >= 0 for elem in value):
-            raise TypeError("Second if condition")
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def __init__(self, size=0, position=(0, 0)):
         '''Constructor
