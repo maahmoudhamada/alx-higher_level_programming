@@ -6,12 +6,11 @@ import math
 
 
 class Magic:
-    """The magic class with 2 methods
-    """
+    """The magic class with 2 methods."""
     def __init__(self, radius):
-        """Constructor method
+        """Constructor method.
         Args:
-            radius: Radius of a circle
+            radius: Radius of a circle.
         """
         self.__radius = 0
         if type(radius) is not int:
