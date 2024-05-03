@@ -69,15 +69,14 @@ class Square:
         '''Magic method to string representation'''
         st = ""
         if self.size == 0:
+            return st
+        for ln in range(self.position[1]):
             st += '\n'
-        else:
-            for ln in range(self.position[1]):
+        for x in range(self.size):
+            for i in range(self.position[0]):
+                st += ' '
+            for y in range(self.size):
+                st += '#'
+            if x != self.size - 1:
                 st += '\n'
-            for x in range(self.size):
-                for i in range(self.position[0]):
-                    st += ' '
-                for y in range(self.size):
-                    st += '#'
-                if x != self.size - 1:
-                    st += '\n'
         return st
