@@ -10,7 +10,7 @@ module.exports = class Square extends OriginalSq {
       let shape = '';
       for (let i = 0; i < this.height; i++) {
         for (let j = 0; j < this.width; j++) {
-          shape += 'C';
+          shape += c;
         }
         if (i + 1 !== this.height) {
           shape += '\n';
