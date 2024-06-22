@@ -15,9 +15,14 @@ if __name__ == '__main__':
         passwd=sql_pass,
         db=db_name)
     cur = db.cursor()
-    cur.execute("""SELECT * FROM states
-        WHERE name='{}'
-        ORDER BY states.id ASC""".format(name_search))
-    print(cur.fetchone())
+    query = """
+        SELECT * FROM states
+        WHERE name
+        LIKE BINARY '{}'
+        ORDER BY states.id ASC"""
+    cur.execute(query.format(name_search))
+    rows = cur.fetchall()
+    for row in rows:
+        print("{}".format(row))
     cur.close()
     db.close()
