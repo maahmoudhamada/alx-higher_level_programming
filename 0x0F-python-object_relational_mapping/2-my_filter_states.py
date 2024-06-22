@@ -16,7 +16,8 @@ if __name__ == '__main__':
         db=db_name)
     cur = db.cursor()
     cur.execute("""SELECT * FROM states
-        WHERE name='{}'""".format(name_search))
+        WHERE name='{}'
+        ORDER BY states.id ASC""".format(name_search))
     print(cur.fetchone())
     cur.close()
-    db.clode()
+    db.close()
