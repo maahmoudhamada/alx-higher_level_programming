@@ -29,4 +29,7 @@ if __name__ == "__main__":
     cur.execute(query, (stat_name,))
     out = [row[0] for row in cur.fetchall()]
     for i in range(len(out)):
-        print("{}".format(out[i]), end=", " if i != len(out) - 1 else "\n")
+        print("{}".format(out[i]), end="")
+        if i != len(out) - 1:
+            print(", ", end="")
+    print("")
