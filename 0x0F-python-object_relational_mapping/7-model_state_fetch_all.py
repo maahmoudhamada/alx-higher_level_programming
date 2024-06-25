@@ -6,6 +6,7 @@ import sys
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from sqlalchemy import asc
 
 
 if __name__ == '__main__':
@@ -17,5 +18,5 @@ if __name__ == '__main__':
     session = Session()
 
     for name, id in \
-            session.query(State.name, State.id).order_by(State.id).all():
+            session.query(State.name, State.id).order_by(asc(State.id)).all():
         print("{}: {}".format(id, name))
